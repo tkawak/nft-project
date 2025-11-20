@@ -4,12 +4,7 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol";
-
-interface IERC5192 {
-    event Locked(uint256 tokenId);
-    event Unlocked(uint256 tokenId);
-    function locked(uint256 tokenId) external view returns (bool);
-}
+import "./IERC5192.sol";
 
 contract MyStandardSBT is ERC1155, Ownable, ERC1155Burnable, IERC5192 {
     constructor(
