@@ -28,9 +28,6 @@ contract MyStandardSBT is ERC1155, Ownable, ERC1155Burnable, IERC5192 {
             super.supportsInterface(interfaceId);
     }
 
-    // ★ここを修正しました★
-    // "uint256 tokenId" から "tokenId" という名前を削除し、"uint256" だけにしました。
-    // これで「変数を使ってないぞ」という警告は消えます。
     function locked(uint256) external pure override returns (bool) {
         return true;
     }
